@@ -34,6 +34,5 @@ def get_english_meaning (path, japanese_emoticon)
   "Sorry, that emoticon was not found"
 end
 
-get_english_meaning("./lib/emoticons.yml", "☜(⌒▽⌒)☞")
 get_english_meaning("./lib/emoticons.yml", "(Ｔ▽Ｔ)")
 get_english_meaning("./lib/emoticons.yml", "hsahs")

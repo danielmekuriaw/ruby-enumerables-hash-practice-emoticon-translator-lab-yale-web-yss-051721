@@ -1,13 +1,39 @@
 # require modules here
 
-def load_library
-  # code goes here
+require 'pry'
+
+require 'yaml'
+
+def load_library(path)
+  library = YAML.load_file(path)
+  hash = Hash.new
+  library.each{ |key, value|
+    hash[key] = {:english => value[0], :japanese => value[1]}
+  }
+  hash
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(path, english_emoticon)
+  library = load_library(path)
+  library.each{ |key, value|
+    value[:english] == english_emoticon
+        return value[:japanese]
+  }
+  "Sorry, that emoticon was not found"
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning (path, japanese_emoticon)
+  library = load_library(path)
+  puts library
+  library.each{ |key, value|
+  binding.pry
+    value[:japanese] == japanese_emoticon
+        puts key
+        return key
+  }
+  "Sorry, that emoticon was not found"
 end
+
+get_english_meaning("./lib/emoticons.yml", "☜(⌒▽⌒)☞")
+get_english_meaning("./lib/emoticons.yml", "(Ｔ▽Ｔ)")
+get_english_meaning("./lib/emoticons.yml", "hsahs")

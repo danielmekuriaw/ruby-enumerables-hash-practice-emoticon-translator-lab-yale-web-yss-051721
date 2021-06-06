@@ -16,6 +16,7 @@ end
 def get_japanese_emoticon(path, english_emoticon)
   library = load_library(path)
   library.each{ |key, value|
+    puts value
     value[:english] == english_emoticon
         puts value[:japanese]
         return value[:japanese]

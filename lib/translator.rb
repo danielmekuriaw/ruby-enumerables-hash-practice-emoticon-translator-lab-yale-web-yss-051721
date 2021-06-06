@@ -28,7 +28,7 @@ def get_english_meaning (path, japanese_emoticon)
   library = load_library(path)
   #puts library
   library.each{ |key, value|
-    value[:japanese] == japanese_emoticon
+    if value[:japanese] == japanese_emoticon
         puts key
         return key
   }

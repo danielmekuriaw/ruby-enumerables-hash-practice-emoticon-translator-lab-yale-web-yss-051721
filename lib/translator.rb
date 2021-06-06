@@ -35,3 +35,5 @@ end
 
 get_english_meaning("./lib/emoticons.yml", "(Ｔ▽Ｔ)")
 get_english_meaning("./lib/emoticons.yml", "hsahs")
+
+get_japanese_emoticon("./lib/emoticons.yml", ":)")
